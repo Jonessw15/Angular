@@ -2,14 +2,26 @@
 
 <mat-toolbar color="primary">Edição de cursos</mat-toolbar>
 
-  <form [formGroup]="form">
-    <mat-form-field>
+
+<mat-card-content>
+  <form [formGroup]="form" class="min-widht">
+    <mat-form-field class="full-widht">
       <input matInput placeholder="Nome" formControlName="name">
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Categoria" formControlName="">
+    <mat-form-field class="full-widht">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="null"></mat-option>
+        <mat-option value="front-end">Front-end</mat-option>
+        <mat-option value="back-end">Back-end</mat-option>
+      </mat-select>
     </mat-form-field>
 
+    <mat-card-actions class="acoes">
+      <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+      <button mat-raised-button color="accent" (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
   </form>
+</mat-card-content>
 </mat-card>
